@@ -3,7 +3,7 @@ argscript
 
 Port of [werkzeug.script][ws] to [argparse][].
 
-Since werkzeug.script is beeing deprecated, I've ported it to argpares.
+Since werkzeug.script is being deprecated, I've ported it to argparse.
 
 Basic Usage is the same as werkzeug.script:
 
