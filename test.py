@@ -1,23 +1,25 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Docstring for script"""
+"""Docstring for test script"""
 
 import argscript
 
 # actions go here
-def action_foo(arg='test'):
+def action_foo(arg1='test'):
     """doc for action foo
     
-    arg -- first argument
+    arg1 -- first argument
     """
-    pass
+    print 'action_foo called with argument arg1: %s' % arg1 
 
-def action_lee(bar=True):
+def action_bar(msg='', times=1):
     """doc for action bar
 
-    bar -- run with bar
+    msg -- a message
+    times -- number 
     """
-    pass
+    print 'action_lee called with arguments msg: %s, times: %s' %(msg, times)
+    
 
 if __name__ == '__main__':
     argscript.run()
