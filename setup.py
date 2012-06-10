@@ -17,10 +17,18 @@ setup(name='argscript',
       version='0.5',
       py_modules=['argscript'],
       author="Peter Hoffmann",
-      author_email="ph@peter-hoffmann.com.com",
+      author_email="ph@peter-hoffmann.com",
       url="https://github.com/hoffmann/argscript",
       license="BSD",
       description="Generate argparse parser from function definitions.",
       long_description=__doc__,
+      classifiers=[
+        'Development Status :: 4 - Beta', 
+        'Environment :: Console',
+        'Topic :: Utilities',
+        'License :: OSI Approved :: BSD License',
+        'Operating System :: OS Independent',
+        'Programming Language :: Python'
+      ],
       platforms='any'
       )
