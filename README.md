@@ -1,3 +1,6 @@
+Argscript
+=========
+
 [argscript][] is a port of [werkzeug.script][ws] to [argparse][]. Argscript generates
 a an argparse command line parser from the function definitions of a script.
 
