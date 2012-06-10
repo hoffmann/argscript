@@ -1,9 +1,9 @@
-"""simple script with argparse"""
 import argparse
 import sys
 import inspect
 
-class MyParser(argparse.ArgumentParser):
+# customized parser show help message when no positional arguments given
+class HelpOnErrorParser(argparse.ArgumentParser):
     def error(self, message):
         sys.stderr.write('error: %s\n' % message)
         self.print_help()
@@ -37,8 +37,8 @@ def analyse_action(func):
         else:
             shortcut, default = definition
         argument_type = type(default)
-        if isinstance(default, bool) and default is True:
-            arg = 'no-' + arg
+        #if isinstance(default, bool) and default is True:
+        #    arg = 'no-' + arg
         arguments.append((arg.replace('_', '-'), shortcut,
                           default, argument_type))
     return func, description, arguments
@@ -50,9 +50,8 @@ def run(namespace=None, action_prefix='action_', args=None):
         args = sys.argv[1:]
 
     actions = find_actions(namespace, action_prefix)
-    #parser = argparse.ArgumentParser(description=namespace['__doc__'])
-    parser = MyParser(description=namespace['__doc__'])
-    subparsers = parser.add_subparsers(dest='func')   
+    parser = HelpOnErrorParser(description=namespace['__doc__'])
+    subparsers = parser.add_subparsers(dest='_func')   
 
     for name, (func, description, arguments) in actions.items():
         doc = description.splitlines()[0]
@@ -71,7 +70,7 @@ def run(namespace=None, action_prefix='action_', args=None):
                 subparser.add_argument('--'+argname, default=default, type=argument_type, help=help_msg)
 
     kwargs = vars(parser.parse_args(args))
-    func = kwargs.pop('func')
+    func = kwargs.pop('_func')
     actions[func][0](**kwargs)
 
 

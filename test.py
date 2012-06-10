@@ -12,7 +12,7 @@ def action_foo(arg='test'):
     """
     pass
 
-def action_lee(bar=4):
+def action_lee(bar=True):
     """doc for action bar
 
     bar -- run with bar
