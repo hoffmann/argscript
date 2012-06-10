@@ -10,6 +10,21 @@ takes a number of arguments where every argument has a default. The type
 of the default value specifies the type of the argument. Arguments can 
 then be passed by using `--name=value` from the shell. [werkzeug.script]
 
+Installation
+------------
+
+**development version:**::
+
+    git clone git@github.com:hoffmann/argscript.git
+    cd argscript
+    sudo python setup.py install
+
+
+**from pypi.python.org:**::
+
+    pip install argscript
+
+
 """
 
 from distutils.core import setup
