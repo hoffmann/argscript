@@ -18,7 +18,7 @@ def action_bar(msg='', times=1):
     msg -- a message
     times -- number 
     """
-    print 'action_lee called with arguments msg: %s, times: %s' %(msg, times)
+    print 'action_bar called with arguments msg: %s, times: %s' %(msg, times)
     
 
 if __name__ == '__main__':
